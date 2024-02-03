@@ -2,7 +2,7 @@
 
 En resumen general, **Mi Librería** es un proyecto de prueba técnica con una lista limitada de libros, todos los detalles fueron proporcionados por la API de jelou.
 
-#### Características principales:
+### Características principales:
 
 - Muestra una lista de todos los libros disponibles, junto con sus respectivas portadas, título, reseña, números de páginas y género.
 - Permite a los usuarios crear una lista de lectura a partir de los libros disponibles.
