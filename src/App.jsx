@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Header } from "./components/Header";
 import { Tabs } from "./components/Tabs";
@@ -22,9 +22,7 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  fetchData();
 
   const filters = availableBooks.reduce(
     (result, curr) => {
@@ -93,12 +91,17 @@ function App() {
     setGenre(selectedOption);
   };
 
+  const availableBooksToDisplay = filterBooks(availableBooks).filter(
+    (book) =>
+      !readingList.some((readingBook) => readingBook.book.ISBN === book.book.ISBN),
+  );
+
   const tabsData = [
     {
-      name: `Libros disponibles (${availableBooks.length})`,
+      name: `Libros disponibles (${availableBooksToDisplay.length})`,
       content: (
         <BooksList
-          data={filterBooks(availableBooks)}
+          data={filterBooks(availableBooksToDisplay)}
           onFavoriteClick={handleAddToReadingList}
         />
       ),
