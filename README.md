@@ -1,25 +1,72 @@
-# Libreria, prueba técnica 01 - [ver en vivo](https://darkwool-libreria.netlify.app/)
+## Mi Libreria - Prueba Tenica
 
-Hecho **con**:
+En resumen general, **Mi Librería** es un proyecto de prueba técnica con una lista limitada de libros, todos los detalles fueron proporcionados por la API de jelou.
 
-- React JS
-- Tailwind
-- Vite / Vitest
+#### Características principales:
 
-¡Nos veremos pronto con más desafíos!, es un gusto poder aportar mi grano de arena en el primero de ellos.
+- Muestra una lista de todos los libros disponibles, junto con sus respectivas portadas, título, reseña, números de páginas y género.
+- Permite a los usuarios crear una lista de lectura a partir de los libros disponibles.
+- Permite a los usuarios buscar un libro, si no se encuentra, se mostrará un mensaje indicando que no está disponible.
+- Permite a los usuarios filtrar la lista de libros disponibles por género.
+- Persistir los datos de la lista de lectura en el almacenamiento local del navegador. Al recargar la página, la lista de lectura se mantiene.
+- Vale la pena señalar que la aplicación es totalmente **responsive** en la mayoría de los dispositivos.
 
-## Cosas a mejorar
+### Instalación
 
-Utilizar `zutsand` para poder contar con una mejor organización y manejo del estado global.
+1. Clonar el repositorio a su máquina local utilizando:
 
-## Características
+```sh
+git clone https://github.com/geo-mena/mi-libreria.git
+```
 
-1. Visualización de Libros Disponibles: La aplicación debe mostrar una lista de libros disponibles que el usuario pueda revisar.
-   1.Creación de Lista de Lectura: El usuario debe ser capaz de crear una lista de lectura a partir de los libros disponibles. En la UI debe quedar claro qué libros están en la lista de lectura y cuáles no. También debe ser posible mover un libro de la lista de lectura a la lista de disponibles.
-1. Filtrado de Libros por Género, Título y número de páginas.
-1. Sincronización de Estado: Debe haber una sincronización del estado global que refleje el número de libros en la lista de lectura y el número de libros todavía disponibles. Si un libro se mueve de la lista de disponibles a la lista de lectura, el recuento de ambos debe actualizarse en consecuencia.
-1. Persistencia de Datos: La aplicación debe persistir los datos de la lista de lectura en el almacenamiento local del navegador. Al recargar la página, la lista de lectura debe mantenerse.
-1. Sincronización entre pestañas: Si el usuario abre la aplicación en dos pestañas diferentes, los cambios realizados en una pestaña deben reflejarse en la otra. Sin necesidad de usar Backend.
-1. Despliegue: La aplicación debe estar desplegada en algún servicio de hosting gratuito (Netlify, Vercel, Firebase, etc) y debe ser accesible a través de una URL pública. Indica la URL en el README.
-1. Test: La aplicación debe tener AL MENOS un test. Haz el test que consideres más importante para tu aplicación.
-1. Diseño responsivo y accesible.
+2. Diríjase al directorio del proyecto con el siguiente comando:
+
+```sh
+cd mi-libreria
+```
+
+3. Instale las dependencias del proyecto:
+
+```sh
+npm install
+```
+
+### Running the Project
+
+To start the development server, use the command:
+
+```sh
+npm run dev
+```
+
+To build the project for production, use the command:
+
+```sh
+npm run build
+```
+
+To start the production server, use the command:
+
+```sh
+npm run start
+```
+
+### Resources
+
+- API: It was developed in Python using Django and later deployed on **RENDER.** [See API](https://api-movies-exam.onrender.com/movies)
+- DB: It was implemented in PostgreSQL and similarly deployed on **RENDER.**
+- Docker: for improved API deployment.
+- The project is built with **React.**
+- React Router is used for navigation within the application.
+- The project includes various React components, such as MovieDetail, MovieList, Loading, Footer, and Header.
+- React Player is utilized for playing the trailers and summaries of the movies.
+- The application's styles are written in separate CSS files for each component.
+- ESLint is used for static code analysis and to identify coding issues.
+- **VERCEL** is used for deploying the application: [See APP](https://en-minutos.vercel.app/)
+- Also, it's worth mentioning that **POSTMAN** was used for querying and updating movies.
+
+#### If you've made it this far, thank you very much.
+
+> Geovanni Mena
+
+<div align="center"><img src="https://github.com/darsaveli/Mariam/blob/main/1479814528_webarebears.gif" width="385px" align="center"></div>
