@@ -1,4 +1,6 @@
-## Mi Libreria - Prueba Tenica
+## Prueba Técnica
+
+### Mi Librería
 
 En resumen general, **Mi Librería** es un proyecto de prueba técnica con una lista limitada de libros, todos los detalles fueron proporcionados por la API de jelou.
 
