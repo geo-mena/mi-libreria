@@ -85,9 +85,7 @@ export function BooksList({ data, isReadingList = false, onFavoriteClick }) {
             </svg>
           </div>
 
-          <h2 className="font-bold text-2xl mb-1">
-            {isReadingList ? "Lista de lectura vacía" : "No se encontraron libros"}
-          </h2>
+          <h2 className="font-bold text-2xl mb-1">Lista de lectura vacía</h2>
           <p className="text-base">
             No se han podido encontrar libros, ¿por qué no pruebas a modificar los
             filtros?
