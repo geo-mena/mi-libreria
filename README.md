@@ -51,21 +51,17 @@ Para iniciar el servidor de producción, utilice el comando:
 npm run start
 ```
 
-### Resources
+### Stack
 
-- API: It was developed in Python using Django and later deployed on **RENDER.** [See API](https://api-movies-exam.onrender.com/movies)
-- DB: It was implemented in PostgreSQL and similarly deployed on **RENDER.**
-- Docker: for improved API deployment.
-- The project is built with **React.**
-- React Router is used for navigation within the application.
-- The project includes various React components, such as MovieDetail, MovieList, Loading, Footer, and Header.
-- React Player is utilized for playing the trailers and summaries of the movies.
-- The application's styles are written in separate CSS files for each component.
-- ESLint is used for static code analysis and to identify coding issues.
-- **VERCEL** is used for deploying the application: [See APP](https://en-minutos.vercel.app/)
-- Also, it's worth mentioning that **POSTMAN** was used for querying and updating movies.
+- React.js
+- Tailwind CSS
+- Jest
+- Vercel
+- React icons
+- Axios
+- API Jelou [Ver API](https://jelou-prueba-tecnica1-frontend.rsbmk.workers.dev)
 
-#### If you've made it this far, thank you very much.
+#### Si has llegado hasta aquí, muchas gracias.
 
 > Geovanni Mena
 
