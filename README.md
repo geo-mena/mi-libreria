@@ -31,21 +31,21 @@ cd mi-libreria
 npm install
 ```
 
-### Running the Project
+### Ejecución del proyecto
 
-To start the development server, use the command:
+Para iniciar el servidor de desarrollo, utilice el comando:
 
 ```sh
 npm run dev
 ```
 
-To build the project for production, use the command:
+Para construir el proyecto para producción, utilice el comando:
 
 ```sh
 npm run build
 ```
 
-To start the production server, use the command:
+Para iniciar el servidor de producción, utilice el comando:
 
 ```sh
 npm run start
