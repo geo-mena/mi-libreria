@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { Header } from "./components/Header";
 import { Tabs } from "./components/Tabs";
@@ -22,7 +22,11 @@ function App() {
     }
   };
 
-  fetchData();
+  useEffect(() => {
+    if (availableBooks.length === 0) {
+      fetchData();
+    }
+  }, [availableBooks]);
 
   const filters = availableBooks.reduce(
     (result, curr) => {
