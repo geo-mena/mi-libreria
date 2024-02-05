@@ -14,6 +14,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [pagesNumber, setPagesNumber] = useState(null);
 
+  // Función asincrónica para obtener datos de libros y actualizar el estado de libros disponibles.
   const fetchData = async () => {
     const library = await BooksData();
     if (library) {
@@ -23,12 +24,14 @@ function App() {
     }
   };
 
+  // Efecto secundario para cargar datos de libros si la lista de libros disponibles está vacía.
   useEffect(() => {
     if (availableBooks.length === 0) {
       fetchData();
     }
   }, [availableBooks]);
 
+  // Cálculo de filtros iniciales para géneros y número de páginas.
   const filters = availableBooks.reduce(
     (result, curr) => {
       const book = curr.book;
@@ -43,7 +46,7 @@ function App() {
   );
   filters.genres = ["Todos", ...new Set(filters.genres)];
 
-  //? Permite remover un libro de la lista de lectura
+  //? Funcion para remover un libro de la lista de lectura
   const removeBook = (isbn, list) => {
     let bookIndex = null;
     const filteredList = list.filter((el, index) => {
@@ -58,7 +61,7 @@ function App() {
     return [bookIndex, filteredList];
   };
 
-  //? Permite agregar un libro a la lista de lectura
+  // Funciones para agregar o remover un libro a la lista de lectura
   const handleAddToReadingList = (isbn) => {
     const [bookIndex, filteredList] = removeBook(isbn, availableBooks);
     setAvailableBooks(filteredList);
@@ -71,7 +74,7 @@ function App() {
     setAvailableBooks([readingList[bookIndex], ...availableBooks]);
   };
 
-  //? Permite filtrar los libros disponibles
+  // Función para filtrar libros según términos de búsqueda, género y número de páginas.
   function filterBooks(list) {
     let filteredList = list;
 
@@ -92,6 +95,7 @@ function App() {
     return filteredList;
   }
 
+  // Manejadores de cambios en la interfaz de usuario.
   const handleSearchChange = (value) => setSearchTerm(value);
   const handleFilterPages = (value) => setPagesNumber(value);
   const handleGenreChange = (e) => {
@@ -99,6 +103,7 @@ function App() {
     setGenre(selectedOption);
   };
 
+  // Filtrado de libros disponibles excluyendo los que ya están en la lista de lectura.
   const availableBooksToDisplay = filterBooks(availableBooks).filter(
     (book) =>
       !readingList.some((readingBook) => readingBook.book.ISBN === book.book.ISBN),

@@ -9,7 +9,7 @@ export function useLocalStorage(key, defaultValue) {
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(data));
 
-    // Sync changes between tabs
+    // Sincronizar cambios entre pestañas
     const setUpdatedData = (e) => {
       if (e.storageArea === localStorage && e.key === key)
         setData(JSON.parse(e.newValue));
