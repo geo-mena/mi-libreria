@@ -4,7 +4,8 @@ import { Header } from "./components/Header";
 import { Tabs } from "./components/Tabs";
 import { BooksList } from "./components/BooksList";
 import { BooksFilters } from "./components/BooksFilters";
-import { BooksData } from "./api";
+import { BooksData } from "./api/api";
+import Footer from "./components/Footer";
 
 function App() {
   const [availableBooks, setAvailableBooks] = useLocalStorage("availableBooks", []);
@@ -42,6 +43,7 @@ function App() {
   );
   filters.genres = ["Todos", ...new Set(filters.genres)];
 
+  //? Permite remover un libro de la lista de lectura
   const removeBook = (isbn, list) => {
     let bookIndex = null;
     const filteredList = list.filter((el, index) => {
@@ -56,6 +58,7 @@ function App() {
     return [bookIndex, filteredList];
   };
 
+  //? Permite agregar un libro a la lista de lectura
   const handleAddToReadingList = (isbn) => {
     const [bookIndex, filteredList] = removeBook(isbn, availableBooks);
     setAvailableBooks(filteredList);
@@ -68,6 +71,7 @@ function App() {
     setAvailableBooks([readingList[bookIndex], ...availableBooks]);
   };
 
+  //? Permite filtrar los libros disponibles
   function filterBooks(list) {
     let filteredList = list;
 
@@ -133,6 +137,7 @@ function App() {
         pages={filters.pages}
       />
       <Tabs data={tabsData} />
+      <Footer />
     </section>
   );
 }
